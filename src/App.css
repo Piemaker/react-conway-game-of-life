@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@500;800&display=swap');
+:root{
+  --row : 25;
+  --col : 25;
+  --border-color : rgb(49, 49, 49) ;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+ background-color: black;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  height: 100vh;
+  width: 100vw;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.main-header{
+  font-size: 2rem;
+  font-family: 'Yesteryear', cursive;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
+}
+.grid-container{
+  background-color: rgb(18, 18, 18);
+  min-width: 90vw;
+  min-height: 60vh;
+  display: grid;
+  grid-template-columns: repeat(var(--row),minmax(auto,1fr));
+  grid-template-rows: repeat(var(--col),minmax(auto,1fr));
+  margin:  auto;
+  border: solid var(--border-color) 3px;
+  border-radius: 0.125rem;
+  font-size: 0px;
+  
+}
+.cell{
+  border: solid var(--border-color) 1px;
+  display: flex;
+}
+.alive{
+  background-color: #66FF33;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(24, 24, 24);
+  min-width: 25vw;
+  height: auto;
+  margin: auto;
+  border-radius: 0.25rem;
+  border: solid rgb(6, 6, 6) 6px;
+  gap: 8px;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+.form label{
+  font-size: 0.75em;
+  color:rgb(49, 49, 49);
+  padding: 2px;
+}
+.form input{
+  border: transparent 0px;
+  text-align: center;
+
+}
+.row{
+  display: flex;
+  background-color: #66FF33;
+  border-radius: 0.125rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: 'Spectral', serif;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin: 0;
+  padding: 3px;
+
+}
+.col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 3px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width : 768px) {
+  .main-header{
+    font-size: 3rem;
   }
-  to {
-    transform: rotate(360deg);
+  .grid-container{
+    min-width : 50vw;
+    min-height: 60vh;
   }
+  
 }
